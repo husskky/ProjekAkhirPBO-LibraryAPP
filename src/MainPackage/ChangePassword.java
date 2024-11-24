@@ -3,15 +3,13 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package MainPackage;
-import KoneksiMySQL.KoneksiLogin;
+import java.awt.HeadlessException;
 import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.sql.Statement;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
-import static javax.swing.JOptionPane.showMessageDialog;
-import javax.swing.table.DefaultTableModel;
 /**
  *
  * @author rrenj1
@@ -216,11 +214,11 @@ public class ChangePassword extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Password berhasil diubah!");
             clearText();
 
-        } catch (Exception e) {
+        } catch (HeadlessException | SQLException e) {
             JOptionPane.showMessageDialog(new JFrame(), "Terjadi kesalahan: " + e.getMessage(), "Error",
                 JOptionPane.ERROR_MESSAGE);
             }
-    } catch (Exception e) {
+    } catch (HeadlessException | ClassNotFoundException | SQLException e) {
     JOptionPane.showMessageDialog(new JFrame(), "Terjadi kesalahan: " + e.getMessage(), "Error",
             JOptionPane.ERROR_MESSAGE);
     }

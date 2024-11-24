@@ -4,19 +4,15 @@
  */
 package MainPackage;
 
-import java.sql.Connection;
-import java.sql.Statement;
-import javax.swing.JOptionPane;
+import java.awt.HeadlessException;
 import java.text.SimpleDateFormat;
-import KoneksiMySQL.KoneksiLogin;
 import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.sql.Statement;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
-import static javax.swing.JOptionPane.showMessageDialog;
-import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author rrenj1
@@ -220,7 +216,7 @@ public class IssueBook extends javax.swing.JFrame {
                 JOptionPane.showMessageDialog(new JFrame(), "ISBN buku tidak ditemukan!", "Error",
                     JOptionPane.ERROR_MESSAGE);
             }
-        } catch (Exception e) {
+        } catch (HeadlessException | ClassNotFoundException | SQLException e) {
             JOptionPane.showMessageDialog(new JFrame(), "Terjadi kesalahan: " + e.getMessage(), "Error",
                 JOptionPane.ERROR_MESSAGE);
         }

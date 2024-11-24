@@ -16,6 +16,10 @@ import javax.swing.table.DefaultTableModel;
  */
 public class Home extends javax.swing.JFrame {
 
+    Login LoginFrame = new Login();
+    IssueBook IB = new IssueBook();
+    ReturnBook RB = new ReturnBook();
+    ChangePassword cp = new ChangePassword();
     /**
      * Creates new form Home
      */
@@ -192,24 +196,26 @@ public class Home extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void LogoutBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LogoutBtnActionPerformed
-        // TODO add your handling code here:
-        
-        Login LoginFrame = new Login();
         LoginFrame.setVisible(true);
         LoginFrame.pack();
         LoginFrame.setLocationRelativeTo(null); 
+        IB.dispose();
+        RB.dispose();
+        cp.dispose();
         this.dispose();
+
+        
     }//GEN-LAST:event_LogoutBtnActionPerformed
 
     private void pinjamActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pinjamActionPerformed
-        IssueBook IB = new IssueBook();
+
         IB.setVisible(true);
         IB.pack();
         IB.setLocationRelativeTo(null);
     }//GEN-LAST:event_pinjamActionPerformed
 
     private void pengembalianActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pengembalianActionPerformed
-        ReturnBook RB = new ReturnBook();
+
         RB.setVisible(true);
         RB.setLocationRelativeTo(null);
     }//GEN-LAST:event_pengembalianActionPerformed
@@ -242,19 +248,18 @@ public class Home extends javax.swing.JFrame {
     }//GEN-LAST:event_loadbukuActionPerformed
 
     private void userPropertyChange(java.beans.PropertyChangeEvent evt) {//GEN-FIRST:event_userPropertyChange
-        // TODO add your handling code here:
+
     }//GEN-LAST:event_userPropertyChange
 
     private void changeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_changeActionPerformed
-        ChangePassword cp = new ChangePassword();
+
         cp.setVisible(true);
         cp.pack();
         cp.setLocationRelativeTo(null);
     }//GEN-LAST:event_changeActionPerformed
 
     private void tabelBukuMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tabelBukuMousePressed
-        JOptionPane.showMessageDialog(new JFrame(), "Copy " + "Comingsoon"," Not Available ",
-            JOptionPane.OK_OPTION);
+
     }//GEN-LAST:event_tabelBukuMousePressed
     
     public void setUser(String name){

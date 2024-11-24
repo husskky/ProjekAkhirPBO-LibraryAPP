@@ -3,15 +3,13 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package MgrPerpustakaan;
-import KoneksiMySQL.KoneksiData;
 import javax.swing.table.DefaultTableModel;
 import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.sql.Statement;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
-import static javax.swing.JOptionPane.showMessageDialog;
 
 /**
  *
@@ -26,6 +24,12 @@ public class HomeAdmin extends javax.swing.JFrame {
         initComponents();
         setTitle("Home-Admin");
     }
+    LoginAdmin LoginFrame = new LoginAdmin();
+    AddBook AB = new AddBook();
+    DeleteBook DB = new DeleteBook();
+    DaftarPinjam DP = new DaftarPinjam();
+    UserCheck UC = new UserCheck();
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -43,6 +47,7 @@ public class HomeAdmin extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         tabelBuku = new javax.swing.JTable();
         daftarPeminjam = new javax.swing.JButton();
+        cekuser = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         user = new javax.swing.JLabel();
         logout = new javax.swing.JButton();
@@ -93,20 +98,28 @@ public class HomeAdmin extends javax.swing.JFrame {
             }
         });
 
+        cekuser.setText("Cek Daftar User");
+        cekuser.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cekuserActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(12, 12, 12)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(deletebook, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(addbook, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(daftarbuku, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(daftarPeminjam, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(daftarPeminjam, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(cekuser, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 562, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 9, Short.MAX_VALUE))
+                .addGap(9, 9, 9))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -116,6 +129,8 @@ public class HomeAdmin extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(daftarbuku)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(cekuser)
+                        .addGap(18, 18, 18)
                         .addComponent(daftarPeminjam)
                         .addGap(18, 18, 18)
                         .addComponent(addbook)
@@ -180,10 +195,10 @@ public class HomeAdmin extends javax.swing.JFrame {
 
     private void logoutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logoutActionPerformed
         setVisible(false);
-        LoginAdmin LoginFrame = new LoginAdmin();
         LoginFrame.setVisible(true);
         LoginFrame.pack();
         LoginFrame.setLocationRelativeTo(null); 
+        AB.dispose();DB.dispose();DP.dispose();UC.dispose();
         this.dispose();
     }//GEN-LAST:event_logoutActionPerformed
 
@@ -196,7 +211,7 @@ public class HomeAdmin extends javax.swing.JFrame {
         Connection con = KoneksiMySQL.KoneksiData.cnct();
         Class.forName("com.mysql.cj.jdbc.Driver");
         Statement st = con.createStatement();
-        ResultSet rs = st.executeQuery(query);
+        ResultSet rs = st.executeQuery(query);  
        
         while (rs.next()) {
             Object[] row = {
@@ -208,7 +223,7 @@ public class HomeAdmin extends javax.swing.JFrame {
             };
             model.addRow(row);
         }
-    } catch (Exception e) {
+    } catch (ClassNotFoundException | SQLException e) {
         JOptionPane.showMessageDialog(new JFrame(), "Terjadi Kesalahan: " + e.getMessage(), "Error",
             JOptionPane.ERROR_MESSAGE);
     }
@@ -217,7 +232,7 @@ public class HomeAdmin extends javax.swing.JFrame {
 
     private void addbookActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addbookActionPerformed
     //    setVisible(false);
-        AddBook AB = new AddBook();
+
         AB.setVisible(true);
         AB.pack();
         AB.setLocationRelativeTo(null);
@@ -226,7 +241,7 @@ public class HomeAdmin extends javax.swing.JFrame {
 
     private void deletebookActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deletebookActionPerformed
         //setVisible(false);
-        DeleteBook DB = new DeleteBook();
+        
         DB.setVisible(true);
         DB.pack();
         DB.setLocationRelativeTo(null);
@@ -237,14 +252,20 @@ public class HomeAdmin extends javax.swing.JFrame {
     }//GEN-LAST:event_userPropertyChange
 
     private void daftarPeminjamActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_daftarPeminjamActionPerformed
-        DaftarPinjam DP = new DaftarPinjam();
+        
         DP.setVisible(true);
         DP.pack();
         DP.setLocationRelativeTo(null);   
     }//GEN-LAST:event_daftarPeminjamActionPerformed
 
+    private void cekuserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cekuserActionPerformed
+        
+        UC.setVisible(true);
+        UC.setLocationRelativeTo(null);
+    }//GEN-LAST:event_cekuserActionPerformed
+
     /**
-     * @param args the command line arguments
+     * @param Id
      */
 
     public void setUser(String Id){
@@ -253,6 +274,7 @@ public class HomeAdmin extends javax.swing.JFrame {
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton addbook;
+    private javax.swing.JButton cekuser;
     private javax.swing.JButton daftarPeminjam;
     private javax.swing.JButton daftarbuku;
     private javax.swing.JButton deletebook;

@@ -1,13 +1,13 @@
 
 package MainPackage;
 import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
-import static javax.swing.JOptionPane.showMessageDialog;
 import KoneksiMySQL.KoneksiLogin;
+import java.awt.HeadlessException;
+import java.sql.SQLException;
 
 public class SignUp extends javax.swing.JFrame {
 
@@ -80,13 +80,13 @@ public class SignUp extends javax.swing.JFrame {
                 .addComponent(jLabel1)
                 .addGap(18, 18, 18)
                 .addComponent(jLabel2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 139, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 109, Short.MAX_VALUE)
                 .addComponent(jLabel3)
                 .addGap(64, 64, 64))
         );
 
         jPanel1.add(jPanel2);
-        jPanel2.setBounds(0, 0, 400, 530);
+        jPanel2.setBounds(0, 0, 400, 500);
 
         jPanel3.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -183,11 +183,11 @@ public class SignUp extends javax.swing.JFrame {
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel8)
                     .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(97, Short.MAX_VALUE))
+                .addContainerGap(67, Short.MAX_VALUE))
         );
 
         jPanel1.add(jPanel3);
-        jPanel3.setBounds(400, 0, 400, 530);
+        jPanel3.setBounds(400, 0, 400, 500);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -199,7 +199,7 @@ public class SignUp extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(32, Short.MAX_VALUE))
+                .addContainerGap(56, Short.MAX_VALUE))
         );
 
         pack();
@@ -254,7 +254,7 @@ public class SignUp extends javax.swing.JFrame {
                 JOptionPane.showMessageDialog(null, "Akun Baru Berhasil Dibuat, Silahkan Login!");
             }
         }
-    } catch (Exception e) {
+    } catch (HeadlessException | ClassNotFoundException | SQLException e) {
         System.out.println("Error! " + e.getMessage());
     }
     }//GEN-LAST:event_SignUpBtnActionPerformed

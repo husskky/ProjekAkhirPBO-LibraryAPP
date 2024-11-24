@@ -3,14 +3,12 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package MgrPerpustakaan;
-import KoneksiMySQL.KoneksiLogin;
+import java.awt.HeadlessException;
 import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.sql.Statement;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
-import static javax.swing.JOptionPane.showMessageDialog;
 /**
  *
  * @author rrenj1
@@ -228,7 +226,7 @@ public class AddBook extends javax.swing.JFrame {
                 JOptionPane.showMessageDialog(null, "Tambah Buku Sukses!");
                 clearTextField();
             
-            }catch(Exception e)
+            }catch(HeadlessException | ClassNotFoundException | SQLException e)
             {JOptionPane.showMessageDialog(new JFrame(), "Terjadi Kesalahan: " + e.getMessage(), "Error",
                 JOptionPane.ERROR_MESSAGE);}
         }

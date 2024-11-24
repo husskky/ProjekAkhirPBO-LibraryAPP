@@ -3,14 +3,13 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package MainPackage;
-import KoneksiMySQL.KoneksiLogin;
+import java.awt.HeadlessException;
 import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.sql.Statement;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
-import static javax.swing.JOptionPane.showMessageDialog;
 /**
  *
  * @author rrenj1
@@ -168,7 +167,7 @@ public class ReturnBook extends javax.swing.JFrame {
                 JOptionPane.showMessageDialog(new JFrame(), "Data peminjaman tidak ditemukan!", "Error",
                     JOptionPane.ERROR_MESSAGE);
             }
-        } catch (Exception e) {
+        } catch (HeadlessException | ClassNotFoundException | SQLException e) {
             JOptionPane.showMessageDialog(new JFrame(), "Terjadi kesalahan: " + e.getMessage(), "Error",
                 JOptionPane.ERROR_MESSAGE);
         }
@@ -186,7 +185,6 @@ public class ReturnBook extends javax.swing.JFrame {
     }//GEN-LAST:event_kembaliActionPerformed
 
     /**
-     * @param args the command line arguments
      */
     public void clearText(){
         isbntf.setText("");

@@ -5,8 +5,10 @@
 package MgrPerpustakaan;
 
 
+import java.awt.HeadlessException;
 import java.sql.Connection;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.sql.Statement;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
@@ -164,7 +166,7 @@ public class DeleteBook extends javax.swing.JFrame {
                     JOptionPane.ERROR_MESSAGE);
             }
         }
-    } catch (Exception e) {
+    } catch (HeadlessException | ClassNotFoundException | SQLException e) {
         JOptionPane.showMessageDialog(new JFrame(), "Terjadi Kesalahan: " + e.getMessage(), "Error",
             JOptionPane.ERROR_MESSAGE);
     }

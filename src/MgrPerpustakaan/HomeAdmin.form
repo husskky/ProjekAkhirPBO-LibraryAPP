@@ -70,15 +70,16 @@
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" attributes="0">
                   <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                  <Group type="103" groupAlignment="1" attributes="0">
                       <Component id="deletebook" max="32767" attributes="0"/>
                       <Component id="addbook" max="32767" attributes="0"/>
                       <Component id="daftarbuku" alignment="1" max="32767" attributes="0"/>
                       <Component id="daftarPeminjam" max="32767" attributes="0"/>
+                      <Component id="cekuser" max="32767" attributes="0"/>
                   </Group>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Component id="jScrollPane1" min="-2" pref="562" max="-2" attributes="0"/>
-                  <EmptySpace min="0" pref="9" max="32767" attributes="0"/>
+                  <EmptySpace min="-2" pref="9" max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -90,6 +91,8 @@
                       <Group type="102" attributes="0">
                           <Component id="daftarbuku" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="32767" attributes="0"/>
+                          <Component id="cekuser" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Component id="daftarPeminjam" min="-2" max="-2" attributes="0"/>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Component id="addbook" min="-2" max="-2" attributes="0"/>
@@ -189,6 +192,14 @@
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="daftarPeminjamActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JButton" name="cekuser">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Cek Daftar User"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cekuserActionPerformed"/>
           </Events>
         </Component>
       </SubComponents>
