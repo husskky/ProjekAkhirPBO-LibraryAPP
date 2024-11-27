@@ -5,10 +5,9 @@
         <group>
             <file>file:/home/rrenj1/NetBeansProjects/ProjectAkhirPBO/src/MgrPerpustakaan/MainAdmin.java</file>
             <file>file:/home/rrenj1/NetBeansProjects/ProjectAkhirPBO/src/MainPackage/Main.java</file>
-            <file>file:/home/rrenj1/NetBeansProjects/ProjectAkhirPBO/src/MgrPerpustakaan/AddBook.java</file>
-            <file>file:/home/rrenj1/NetBeansProjects/ProjectAkhirPBO/src/MainPackage/ReturnBook.java</file>
             <file>file:/home/rrenj1/NetBeansProjects/ProjectAkhirPBO/src/MainPackage/Login.java</file>
-            <file>file:/home/rrenj1/NetBeansProjects/ProjectAkhirPBO/src/MgrPerpustakaan/HomeAdmin.java</file>
+            <file>file:/home/rrenj1/NetBeansProjects/ProjectAkhirPBO/src/MgrPerpustakaan/LoginAdmin.java</file>
+            <file>file:/home/rrenj1/NetBeansProjects/ProjectAkhirPBO/src/MainPackage/SignUp.java</file>
         </group>
     </open-files>
 </project-private>
