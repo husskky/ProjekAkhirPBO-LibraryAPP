@@ -21,6 +21,7 @@ public class UserCheck extends javax.swing.JFrame {
      */
     public UserCheck() {
         initComponents();
+        setTitle("Cek Daftar User");
     }
 
     /**

@@ -24,6 +24,7 @@ public class IssueBook extends javax.swing.JFrame {
      */
     public IssueBook() {
         initComponents();
+        setTitle("Pinjam Buku");
     }
 
     /**
@@ -226,7 +227,7 @@ public class IssueBook extends javax.swing.JFrame {
     public void clearText(){
         isbntf.setText("");
         emailtf.setText("");
-        //datetf.setDate();
+        //datetf.setText("");
     }
     /**
      * @param args the command line arguments

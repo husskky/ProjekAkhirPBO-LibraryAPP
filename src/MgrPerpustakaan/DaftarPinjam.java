@@ -23,6 +23,7 @@ public class DaftarPinjam extends javax.swing.JFrame {
      */
     public DaftarPinjam() {
         initComponents();
+        setTitle("Cek Daftar Peminjaman");
     }
 
     /**

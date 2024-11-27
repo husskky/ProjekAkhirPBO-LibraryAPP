@@ -22,7 +22,7 @@ public class HomeAdmin extends javax.swing.JFrame {
      */
     public HomeAdmin() {
         initComponents();
-        setTitle("Home-Admin");
+        setTitle("HOME-ADMIN");
     }
     LoginAdmin LoginFrame = new LoginAdmin();
     AddBook AB = new AddBook();

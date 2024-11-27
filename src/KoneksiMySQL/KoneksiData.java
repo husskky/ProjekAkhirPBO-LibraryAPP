@@ -18,7 +18,7 @@ public class KoneksiData{
         try {
             if (cnct == null) {
                 Class.forName("com.mysql.cj.jdbc.Driver");
-                cnct = DriverManager.getConnection("jdbc:mysql://localhost:3306/database_perpusjava", "root", "12324");
+                cnct = DriverManager.getConnection("jdbc:mysql://localhost:3306/java_user_database", "root", "12324");
                 System.out.println("Koneksi berhasil!");
             }
             return cnct;

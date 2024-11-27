@@ -24,6 +24,7 @@ public class DeleteBook extends javax.swing.JFrame {
      */
     public DeleteBook() {
         initComponents();
+        setTitle("Hapus Buku");
     }
 
     /**

@@ -21,6 +21,7 @@ public class ReturnBook extends javax.swing.JFrame {
      */
     public ReturnBook() {
         initComponents();
+        setTitle("Kembalikan Buku");
     }
 
     /**

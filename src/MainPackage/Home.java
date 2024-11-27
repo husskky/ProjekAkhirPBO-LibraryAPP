@@ -83,7 +83,7 @@ public class Home extends javax.swing.JFrame {
             }
         });
 
-        pengembalian.setText("Pengembalian Buku");
+        pengembalian.setText("Kembalikan Buku");
         pengembalian.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 pengembalianActionPerformed(evt);
